@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -524,31 +523,61 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      /* NAV */
+      nav { padding: 0 4%; }
+      .nav-cta { padding: 8px 16px; font-size: 0.82rem; }
+
+      /* HERO */
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 90px 5% 50px;
+        padding: 86px 5% 44px;
+        gap: 32px;
       }
-
-      .hero p { margin: 0 auto 36px; }
-      .hero-actions { justify-content: center; }
+      .hero-badge { font-size: 0.75rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { margin: 0 auto 28px; font-size: 1rem; }
+      .hero-actions { justify-content: center; flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; max-width: 320px; justify-content: center; text-align: center; }
       .hero-image { order: -1; }
-      .hero-image img { max-width: 320px; }
+      .hero-image img { max-width: 280px; }
 
-      .social-proof { gap: 20px; }
+      /* SOCIAL PROOF */
+      .social-proof { flex-direction: column; gap: 12px; padding: 20px 5%; text-align: center; }
       .proof-divider { display: none; }
 
-      .steps-grid, .features-grid { grid-template-columns: 1fr; }
+      /* STEPS */
+      .steps { padding: 60px 5%; }
+      .steps-grid { grid-template-columns: 1fr; gap: 16px; }
 
-      .qr-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      /* FEATURES */
+      .features { padding: 60px 5%; }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+      .feature-card { padding: 22px 18px; }
+      .feature-icon { width: 44px; height: 44px; font-size: 1.3rem; margin-bottom: 12px; }
+      .feature-card h3 { font-size: 0.95rem; }
+      .feature-card p { font-size: 0.82rem; }
 
-      .qr-image-wrapper { max-width: 340px; margin: 0 auto; }
+      /* QR */
+      .qr-outer { padding: 60px 5%; }
+      .qr-section { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      .qr-image-wrapper { max-width: 300px; margin: 0 auto; }
+      /* reposicioná el QR overlay en mobile */
+      #qr-overlay { left: 51%; top: 29%; width: 37%; }
       .qr-steps { align-items: flex-start; text-align: left; }
 
-      footer { flex-direction: column; text-align: center; }
+      /* CTA */
+      .cta-section { padding: 60px 5%; }
+      .cta-section h2 { font-size: 1.6rem; }
+      .btn-white { width: 100%; max-width: 320px; justify-content: center; }
+
+      /* FOOTER */
+      footer { flex-direction: column; text-align: center; padding: 30px 5%; }
+    }
+
+    @media (max-width: 400px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
@@ -661,8 +690,7 @@
   <section class="qr-outer">
     <div class="qr-section">
       <div class="qr-image-wrapper">
-        <img src="Referencia%20QR.png" alt="Soporte QR PediteApp para mesa de restaurante" />
-        <div id="qr-overlay"></div>
+        <img src="Referencia%20QR%20falso.png" alt="Soporte QR PediteApp para mesa de restaurante" />
       </div>
       <div class="qr-content">
         <div class="section-label">El QR de tu local</div>
